@@ -3,6 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Mi Videojuego</title>
+
+	<script src="scripts/framework.js" type="application/javascript"></script>
+	<script src="scripts/keyboard.js.js" type="application/javascript"></script>
+	<script src="scripts/mouse.js" type="application/javascript"></script>
+	<script src="scripts/airplane.js" type="application/javascript"></script>
+	<script src="scripts/enemy.js" type="application/javascript"></script>
+	<script src="scripts/bullet.js" type="application/javascript"></script>
 </head>
 <body>
 	<!--Lienzo de dibujo-->
