@@ -20,7 +20,7 @@
 			x = 10, y = 10;
 
 		spriteSheet.onload = function(){
-			getFrameAnimation(actualizarJuego);
+			getFrameAnimation(updateGame);
 			//setInterval(actualizarJuego, 1000/60); //setInterval creamos un bucle infinito, como el while(true)
 		};
 
@@ -31,7 +31,7 @@
 			window.oRequestAnimationFrame ||
 			window.msRequestAnimationFrame ||
 			function(callback, element){
-				window.setTimeout(actualizarJuego, 1000/60);
+				window.setTimeout(updateGame, 1000/60);
 			};
 		})();
 
@@ -161,11 +161,11 @@
 					enemies.push(createEnemy());
 				}
 
-		function actualizarJuego(){
+		function updateGame(){
 			contexto.fillStyle = "white";
 			contexto.fillRect(0, 0, 640, 480);
 
-			getFrameAnimation(actualizarJuego);
+			getFrameAnimation(updateGame);
 
 			var actualImage = positions[animationIndex];
 			for(var i = 0; i < enemies.length; i++){
