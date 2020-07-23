@@ -1,5 +1,5 @@
 var airplane = {
-	var positions = [{x:38, y:6, width:24, height:16},
+	positions: [{x:38, y:6, width:24, height:16},
 					{x:101, y:6, width:24, height:16},
 					{x:166, y:6, width:24, height:16}],
 	animationIndex: 0,
