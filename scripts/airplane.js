@@ -48,8 +48,25 @@ var airplane = {
 		this.y += (mouse.y - this.y) / this.speedMove;
 	},
 
+	shoot: function(){
+		if(this.accumulatedShotTime > 0.5){
+			this.accumulatedShotTime = 0;
+
+			for(var i = 0; i < framework.gameObjects.length; i++){
+				if(framework.gameObjects[i].name === 'bullet' && !framework.gameObjects[i].visible){
+					framework.gameObjects[i].x = this.x + 3;
+					framework.gameObjects[i].y = this.y - 10;
+					framework.gameObjects[i].visible = true;
+					break;
+				}
+
+			}
+		}
+	},
+
 	update: function(delta){
 		this.accumulatedTime += delta;
+		this.accumulatedShotTime += delta;
 		this.updateWithMouse();
 		this.actualImage = this.positions[this.animationIndex];
 	},
