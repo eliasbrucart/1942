@@ -24,6 +24,10 @@
 				enemyClon.x = (Math.random() * 400) + 40;
 				framework.gameObjects.push(enemyClon);
 			}
+			for(var i = 0; i < 10; i++){
+				var bulletClon = Object.create(bullet);
+				framework.gameObjects.push(bulletClon);
+			}
 			framework.gameObjects.push(airplane);
 			framework.init();
 			mouse.init();
