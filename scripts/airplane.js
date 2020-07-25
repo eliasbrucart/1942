@@ -68,6 +68,7 @@ var airplane = {
 	update: function(delta){
 		this.accumulatedTime += delta;
 		this.accumulatedShotTime += delta;
+		this.shoot();
 		this.updateWithMouse();
 		this.actualImage = this.positions[this.animationIndex];
 	},
