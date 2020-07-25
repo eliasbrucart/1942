@@ -4,11 +4,12 @@ var airplane = {
 					{x:166, y:6, width:24, height:16}],
 	animationIndex: 0,
 	speedMove: 20,
-	x: 10,
-	y: 10,
+	x: 320,
+	y: 240,
 	objetiveX: 0,
 	objetiveY: 0,
 	accumulatedTime: 0,
+	accumulatedShotTime: 0,
 
 	updateWithKeys: function(){
 		if(keyboard.keysPressed['65']){

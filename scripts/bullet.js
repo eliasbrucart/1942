@@ -14,7 +14,7 @@ var bullet = {
 			this.visible = false;
 		}
 		for(var i = 0; i < framework.gameObjects.length; i++){
-			if(framework.gameObjects[i].name == 'enemy'){
+			if(framework.gameObjects[i].name === 'enemy'){
 				if(this.collision(framework.gameObjects[i])){
 					this.visible = false;
 					framework.gameObjects[i].impact();
