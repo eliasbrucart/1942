@@ -10,15 +10,18 @@
 	<script src="scripts/airplane.js" type="application/javascript"></script>
 	<script src="scripts/enemy.js" type="application/javascript"></script>
 	<script src="scripts/bullet.js" type="application/javascript"></script>
+	<script src="scripts/background.js" type="application/javascript"></script>
 </head>
 <body>
 	<!--Lienzo de dibujo-->
 	<canvas id="miCanvas" width="640" height="480"></canvas>
 </body>
 	<script type="application/javascript">
-		var spriteSheet = new Image();
+		var spriteSheet = new Image(),
+			background = new Image();
 		
 		spriteSheet.onload = function(){
+			framework.gameObjects.push(backgroundGame);
 			for(var i = 0; i < 10; i++){
 				var enemyClon = Object.create(enemy);
 				enemyClon.x = (Math.random() * 400) + 40;
@@ -36,5 +39,6 @@
 			keyboard.init();
 		};
 		spriteSheet.src = 'img/1942.png';
+		background.src = 'img/background.png';
 	</script>
 </html>
