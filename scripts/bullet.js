@@ -7,24 +7,6 @@ var bullet = {
 	visible: true,
 	speed: 2,
 
-	update: function(delta){
-		this.y -= this.speed;
-
-		if(this.y + this.height < 0){
-			this.visible = false;
-		}
-
-		for(var i = 0; i < framework.gameObjects.length; i++){
-			if(framework.gameObjects[i].name === 'enemy'){
-				if(this.collision(framework.gameObjects[i])){
-					this.visible = false;
-					framework.gameObjects[i].impact();
-					break;
-				}
-			}
-		}
-	},
-
 	collision: function(enemy){
 		if(this.x + this.width < enemy.x){
 			return false;
@@ -42,6 +24,24 @@ var bullet = {
 			return false;
 		}
 		return true;
+	},
+
+	update: function(delta){
+		this.y -= this.speed;
+
+		if(this.y + this.height < 0){
+			this.visible = false;
+		}
+
+		for(var i = 0; i < framework.gameObjects.length; i++){
+			if(framework.gameObjects[i].name === 'enemy'){
+				if(this.collision(framework.gameObjects[i])){
+					this.visible = false;
+					framework.gameObjects[i].impact();
+					break;
+				}
+			}
+		}
 	},
 
 	draw: function(contexto){
