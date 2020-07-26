@@ -22,6 +22,8 @@
 			for(var i = 0; i < 10; i++){
 				var enemyClon = Object.create(enemy);
 				enemyClon.x = (Math.random() * 400) + 40;
+				enemyClon.update = enemyClon.updateNormal;
+				enemyClon.draw = enemyClon.drawNormal;
 				framework.gameObjects.push(enemyClon);
 			}
 			for(var i = 0; i < 10; i++){
