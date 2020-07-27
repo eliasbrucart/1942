@@ -1,6 +1,6 @@
 var bullet = {
-	x: 320,
-	y: 240,
+	x: 0,
+	y: 0,
 	width: 17,
 	height: 12,
 	name: 'bullet',

@@ -1,6 +1,7 @@
 var enemy = {
 	x:(Math.random() * 400) + 40,
 	y:1,
+	name: 'enemy',
 	explosionIndex: 0,
 	explosionAccumulator: 0,
 
