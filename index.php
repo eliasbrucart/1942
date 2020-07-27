@@ -25,6 +25,7 @@
 		
 		spriteSheet.onload = function(){
 			framework.gameObjects.push(backgroundGame);
+			framework.gameObjects.push(score);
 			for(var i = 0; i < 10; i++){
 				var enemyClon = Object.create(enemy);
 				enemyClon.x = (Math.random() * 400) + 40;
