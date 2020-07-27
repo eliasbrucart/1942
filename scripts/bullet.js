@@ -38,6 +38,7 @@ var bullet = {
 				if(this.collision(framework.gameObjects[i])){
 					framework.gameObjects[i].impact();
 					this.visible = true;
+					points += 100;
 					break;
 				}
 			}

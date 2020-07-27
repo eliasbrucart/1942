@@ -11,6 +11,7 @@
 	<script src="scripts/enemy.js" type="application/javascript"></script>
 	<script src="scripts/bullet.js" type="application/javascript"></script>
 	<script src="scripts/background.js" type="application/javascript"></script>
+	<script src="scripts/score.js" type="application/javascript"></script>
 </head>
 <body>
 	<!--Lienzo de dibujo-->
@@ -19,7 +20,8 @@
 	<script type="application/javascript">
 		var spriteSheet = new Image(),
 			background = new Image(),
-			background2 = new Image();
+			background2 = new Image(),
+			points = 0;
 		
 		spriteSheet.onload = function(){
 			framework.gameObjects.push(backgroundGame);
