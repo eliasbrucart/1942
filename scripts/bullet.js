@@ -4,7 +4,7 @@ var bullet = {
 	width: 17,
 	height: 12,
 	name: 'bullet',
-	visible: true,
+	visible: false,
 	speed: 2,
 
 	collision: function(enemy){
@@ -36,8 +36,8 @@ var bullet = {
 		for(var i = 0; i < framework.gameObjects.length; i++){
 			if(framework.gameObjects[i].name === 'enemy'){
 				if(this.collision(framework.gameObjects[i])){
-					this.visible = false;
 					framework.gameObjects[i].impact();
+					this.visible = true;
 					break;
 				}
 			}
