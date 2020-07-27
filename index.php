@@ -18,7 +18,8 @@
 </body>
 	<script type="application/javascript">
 		var spriteSheet = new Image(),
-			background = new Image();
+			background = new Image(),
+			background2 = new Image();
 		
 		spriteSheet.onload = function(){
 			framework.gameObjects.push(backgroundGame);
@@ -40,5 +41,6 @@
 		};
 		spriteSheet.src = 'img/1942.png';
 		background.src = 'img/background.png';
+		background2.src = 'img/background-2.png';
 	</script>
 </html>
