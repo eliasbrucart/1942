@@ -4,6 +4,12 @@ var score = {
 	},
 
 	draw: function(contexto){
-		contexto.fillText(points, 10, 10);
+		contexto.save();
+		contexto.font = '20pt verdana';
+		contexto.strokeStyle = 'black';
+		contexto.fillStyle = 'white';
+		contexto.strokeText(points, 10, 40);
+		contexto.fillText(points, 9, 39);
+		contexto.restore();
 	}
 };
