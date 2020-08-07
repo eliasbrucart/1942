@@ -5,7 +5,7 @@ var score = {
 
 	draw: function(contexto){
 		contexto.save();
-		contexto.font = '20pt verdana';
+		contexto.font = '60pt retroBits';
 		contexto.strokeStyle = 'black';
 		contexto.fillStyle = 'white';
 		contexto.strokeText(points, 10, 40);

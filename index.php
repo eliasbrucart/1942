@@ -12,6 +12,13 @@
 	<script src="scripts/bullet.js" type="application/javascript"></script>
 	<script src="scripts/background.js" type="application/javascript"></script>
 	<script src="scripts/score.js" type="application/javascript"></script>
+
+	<style>
+		@font-face{
+			font-family: 'retroBits';
+			src: url('font/zxBold.ttf');
+		}
+	</style>
 </head>
 <body>
 	<!--Lienzo de dibujo-->
