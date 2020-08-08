@@ -29,6 +29,8 @@
 			background = new Image(),
 			background2 = new Image(),
 			points = 0;
+
+			var lastPoints = localStorage['points'] ? parseFloat(localStorage['points']) : 0;
 		
 		spriteSheet.onload = function(){
 			framework.gameObjects.push(backgroundGame);
