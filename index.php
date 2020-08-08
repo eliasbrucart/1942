@@ -33,6 +33,11 @@
 			explosionSound = new Audio();
 
 			var lastPoints = localStorage['points'] ? parseFloat(localStorage['points']) : 0;
+
+			function canExecute(format){
+				var soundTest = new Audio();
+				return (!!(soundTest.canPlayType && soundTest.canPlayType(format).replace(/no/,'')));
+			}
 		
 		spriteSheet.onload = function(){
 			framework.gameObjects.push(backgroundGame);
@@ -57,7 +62,15 @@
 		background.src = 'img/background.png';
 		background2.src = 'img/background-2.png';
 
-		shootSound.src = 'sounds/WAV/P1942_Shoot1.wav';
-		explosionSound.src = 'sounds/WAV/P1942_Explosion.wav';
+		if('audio/ogg; codecs="vorbis"'){
+			shootSound.src = 'sounds/P1942_Shoot1.ogg';
+			explosionSound.src = 'sounds/OGG/P1942_Explosion.ogg';
+		} else if('audio/wav; codecs="1"'){
+			shootSound.src = 'sounds/WAV/P1942_Shoot1.wav';
+			explosionSound.src = 'sounds/P1942_Explosion.wav';
+		} else if('audio/mpeg;'){
+			shootSound.src = 'sounds/MP3/P1942_Shoot1.mp3';
+			explosionSound.src = 'sounds/MP3/P1942_Explosion.mp3';
+		}
 	</script>
 </html>
