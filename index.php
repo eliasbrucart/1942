@@ -4,9 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Mi Videojuego</title>
 
-	<script src="scripts/framework.js" type="application/javascript"></script>
+	<script src="Framework/jsGFwk.js"></script>
+	<script src="Framework/jsGFwk2dFastAnimation.js"></script>
+	<script src="Framework/jsGFwkCollisions.js"></script>
+	<script src="Framework/jsGFwkIO.js"></script>
+	<script src="Framework/jsGFwkRM.js"></script>
+	<!--<script src="scripts/framework.js" type="application/javascript"></script>
 	<script src="scripts/keyboard.js" type="application/javascript"></script>
-	<script src="scripts/mouse.js" type="application/javascript"></script>
+	<script src="scripts/mouse.js" type="application/javascript"></script> -->
 	<script src="scripts/airplane.js" type="application/javascript"></script>
 	<script src="scripts/enemy.js" type="application/javascript"></script>
 	<script src="scripts/bullet.js" type="application/javascript"></script>
