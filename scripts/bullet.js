@@ -39,6 +39,7 @@ var bullet = {
 					framework.gameObjects[i].impact();
 					this.visible = true;
 					points += 100;
+					explosionSound.play();
 					break;
 				}
 			}
