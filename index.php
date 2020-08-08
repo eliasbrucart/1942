@@ -28,7 +28,9 @@
 		var spriteSheet = new Image(),
 			background = new Image(),
 			background2 = new Image(),
-			points = 0;
+			points = 0,
+			shootSound = new Audio(),
+			ExplosionSound = new Audio();
 
 			var lastPoints = localStorage['points'] ? parseFloat(localStorage['points']) : 0;
 		
@@ -54,5 +56,8 @@
 		spriteSheet.src = 'img/1942.png';
 		background.src = 'img/background.png';
 		background2.src = 'img/background-2.png';
+
+		shootSound.src = 'sounds/WAV/P1942_Shoot1.wav';
+		ExplosionSound.src = 'sounds/WAV/P1942_Explosion.wav';
 	</script>
 </html>
