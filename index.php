@@ -41,6 +41,26 @@
 		jsGFwk.ResourceManager.addGraphic({ name: "main", source: "img/1942.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background-2.png"});
+		
+		jsGFwk.createObject({
+			id: "progressLoader",
+			visible: true,
+			init: function(){
+				jsGFwk.ResourceManager.onResourcesLoadedCompleted = function(){
+					jsGFwk.getGameObjects().progressLoader.destroy();
+					jsGFwk.createObject(background);
+				};
+			},
+			update: function(delta){
+
+			},
+			draw: function(context){
+				context.fillStyle = "white";
+				context.font = "30pt verdana";
+				context.fillText(jsGFwk.ResourceManager._totalLoadedResources + '/' + jsGFwk.ResourceManager._totalResources, 250, 220);
+			}
+		});
+
 		var spriteSheet = new Image(),
 			background = new Image(),
 			background2 = new Image(),
