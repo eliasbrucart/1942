@@ -38,6 +38,9 @@
 		jsGFwk.include("Collisions");
 		jsGFwk.include("ResourceManager");
 		jsGFwk.start();
+		jsGFwk.ResourceManager.addGraphic({ name: "main", source: "img/1942.png"});
+		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
+		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background-2.png"});
 		var spriteSheet = new Image(),
 			background = new Image(),
 			background2 = new Image(),
