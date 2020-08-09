@@ -30,6 +30,14 @@
 	<canvas id="miCanvas" width="640" height="480"></canvas>
 </body>
 	<script type="application/javascript">
+		jsGFwk.settings.canvas = "miCanvas";
+		jsGFwk.settings.clearColor = "rgb(0, 0, 0)";
+		jsGFwk.settings.frameRate = 1000 / 60;
+		jsGFwk.include("FastAnimation");
+		jsGFwk.include("IO");
+		jsGFwk.include("Collisions");
+		jsGFwk.include("ResourceManager");
+		jsGFwk.start();
 		var spriteSheet = new Image(),
 			background = new Image(),
 			background2 = new Image(),
@@ -44,7 +52,7 @@
 				return (!!(soundTest.canPlayType && soundTest.canPlayType(format).replace(/no/,'')));
 			}
 		
-		spriteSheet.onload = function(){
+		/*spriteSheet.onload = function(){
 			framework.gameObjects.push(backgroundGame);
 			framework.gameObjects.push(score);
 			for(var i = 0; i < 10; i++){
@@ -62,7 +70,7 @@
 			framework.init();
 			mouse.init();
 			keyboard.init();
-		};
+		};*/
 		spriteSheet.src = 'img/1942.png';
 		background.src = 'img/background.png';
 		background2.src = 'img/background-2.png';
