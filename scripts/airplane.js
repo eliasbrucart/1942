@@ -1,15 +1,26 @@
 var airplane = {
+	id: 'airplane',
+	visible: 'true',
 	positions: [{x:38, y:6, width:24, height:16},
 					{x:101, y:6, width:24, height:16},
 					{x:166, y:6, width:24, height:16}],
 	animationIndex: 0,
 	speedMove: 20,
+	mouseId: -1,
+	mouseCoords: {x: 0, y: 0},
 	x: 320,
 	y: 240,
 	objetiveX: 0,
 	objetiveY: 0,
 	accumulatedTime: 0,
 	accumulatedShotTime: 0,
+
+	init: function(){
+		var self = this;
+		this.museId = jsGFwk.IO.mouse.registerClick(function(coord){
+			self.mouseCoords = coord;
+		});
+	},
 
 	updateWithKeys: function(){
 		if(keyboard.keysPressed['65']){
@@ -68,13 +79,15 @@ var airplane = {
 	update: function(delta){
 		this.accumulatedTime += delta;
 		this.accumulatedShotTime += delta;
-		this.shoot();
-		this.updateWithMouse();
+		//this.shoot();
+		//this.updateWithMouse();
+		this.x += (this.mouseCoords.x - this.x) / this.speedMove;
+		this.y += (this.mouseCoords.y - this.y) / this.speedMove;
 		this.actualImage = this.positions[this.animationIndex];
 	},
 
 	draw: function(contexto){
-		contexto.drawImage(spriteSheet, this.actualImage.x, this.actualImage.y,
+		contexto.drawImage(jsGFwk.ResourceManager.graphics.main.image, this.actualImage.x, this.actualImage.y,
 			25, 16, this.x, this.y, 25, 16);
 	}
 };

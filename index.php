@@ -48,6 +48,7 @@
 				jsGFwk.ResourceManager.onResourcesLoadedCompleted = function(){
 					jsGFwk.getGameObjects().progressLoader.destroy();
 					jsGFwk.createObject(backgroundGame);
+					jsGFwk.createObject(airplane);
 				};
 			},
 			update: function(delta){
