@@ -9,6 +9,7 @@
 	<script src="Framework/jsGFwkCollisions.js"></script>
 	<script src="Framework/jsGFwkIO.js"></script>
 	<script src="Framework/jsGFwkRM.js"></script>
+	<script src="Framework/jsGFwkContainer.js"></script>
 	<!--<script src="scripts/framework.js" type="application/javascript"></script>
 	<script src="scripts/keyboard.js" type="application/javascript"></script>
 	<script src="scripts/mouse.js" type="application/javascript"></script> -->
@@ -37,6 +38,7 @@
 		jsGFwk.include("IO");
 		jsGFwk.include("Collisions");
 		jsGFwk.include("ResourceManager");
+		jsGFwk.include("Container");
 		jsGFwk.ResourceManager.addGraphic({name: "main", source: "img/1942.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background2", source: "img/background-2.png"});
@@ -49,6 +51,7 @@
 					jsGFwk.getGameObjects().progressLoader.destroy();
 					jsGFwk.createObject(backgroundGame);
 					jsGFwk.createObject(airplane);
+					jsGFwk.Container.createContainer('containerBullet',bullet);
 				};
 			},
 			update: function(delta){

@@ -7,6 +7,11 @@ var bullet = {
 	visible: false,
 	speed: 2,
 
+	onInit: function(parameters){
+		this.x = parameters.x;
+		this.y = parameters.y;
+	},
+
 	collision: function(enemy){
 		if(this.x + this.width < enemy.x){
 			return false;
@@ -26,14 +31,14 @@ var bullet = {
 		return true;
 	},
 
-	update: function(delta){
+	onUpdate: function(delta){
 		this.y -= this.speed;
 
 		if(this.y + this.height < 0){
 			this.visible = false;
 		}
 
-		for(var i = 0; i < framework.gameObjects.length; i++){
+		/*for(var i = 0; i < framework.gameObjects.length; i++){
 			if(framework.gameObjects[i].name === 'enemy'){
 				if(this.collision(framework.gameObjects[i])){
 					framework.gameObjects[i].impact();
@@ -43,12 +48,10 @@ var bullet = {
 					break;
 				}
 			}
-		}
+		}*/
 	},
 
-	draw: function(contexto){
-		if(this.visible){
-			contexto.drawImage(spriteSheet, 140, 82, 17, 12, this.x, this.y, this.width, this.height);
-		}
+	onDraw: function(contexto){
+		contexto.drawImage(jsGFwk.ResourceManager.graphics.main.image, 140, 82, 17, 12, this.x, this.y, this.width, this.height);
 	}
 };
