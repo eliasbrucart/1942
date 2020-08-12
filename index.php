@@ -10,6 +10,7 @@
 	<script src="Framework/jsGFwkIO.js"></script>
 	<script src="Framework/jsGFwkRM.js"></script>
 	<script src="Framework/jsGFwkContainer.js"></script>
+	<script src="Framework/jsGFwkDebugger.js"></script>
 	<!--<script src="scripts/framework.js" type="application/javascript"></script>
 	<script src="scripts/keyboard.js" type="application/javascript"></script>
 	<script src="scripts/mouse.js" type="application/javascript"></script> -->
@@ -39,6 +40,8 @@
 		jsGFwk.include("Collisions");
 		jsGFwk.include("ResourceManager");
 		jsGFwk.include("Container");
+		jsGFwk.include("Debugger");
+		jsGFwk.Debugger.on = true;
 		jsGFwk.ResourceManager.addGraphic({name: "main", source: "img/1942.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background2", source: "img/background-2.png"});
