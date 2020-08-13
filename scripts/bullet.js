@@ -41,7 +41,7 @@ var bullet = {
 
 		jsGFwk.getGameObjects().containerEnemy.eachCloned(function (enemy, event){
 			if(jsGFwk.Collisions.areCollidingBy(enemy, self, jsGFwk.Collisions.collidingModes.RECTANGLE)){
-				jsGFwk.ResourceManager.sounds.explosion.audio.play();
+				channelExplosion.play();
 				enemy.impact();
 				self.destroy();
 				event.cancel = true;

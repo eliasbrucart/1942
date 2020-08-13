@@ -69,7 +69,8 @@ var airplane = {
 			this.accumulatedShotTime = 0;
 
 			jsGFwk.getGameObjects().containerBullet.cloneObject({x: this.x + 3, y: this.y - 10});
-			jsGFwk.ResourceManager.sounds.shootSounds.audio.play();
+			//jsGFwk.ResourceManager.sounds.shootSounds.audio.play();
+			channelShoot.play();
 		}
 	},
 

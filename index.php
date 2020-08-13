@@ -11,6 +11,7 @@
 	<script src="Framework/jsGFwkRM.js"></script>
 	<script src="Framework/jsGFwkContainer.js"></script>
 	<script src="Framework/jsGFwkDebugger.js"></script>
+	<script src="Framework/jsGFwkJukebox.js"></script>
 	<script src="scripts/gamecontrol.js"></script>
 	<!--<script src="scripts/framework.js" type="application/javascript"></script>
 	<script src="scripts/keyboard.js" type="application/javascript"></script>
@@ -47,6 +48,9 @@
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background2", source: "img/background-2.png"});
 
+		var channelShoot;
+		var channelExplosion;
+
 		var explosion = {};
 		
 		explosion[jsGFwk.ResourceManager.sounds.format.wav] = {source: "sounds/WAV/P1942_Explosion.wav"};
@@ -73,6 +77,18 @@
 
 					jsGFwk.Container.createContainer('containerBullet',bullet);
 					jsGFwk.Container.createContainer('containerEnemy',enemy);
+
+					channelShoot = new jsGFwk.Jukebox({
+						volume: 0.5,
+						channels: 5,
+						source: jsGFwk.ResourceManager.sounds.shootSounds
+					});
+
+					channelExplosion = new jsGFwk.Jukebox({
+						volume: 0.5,
+						channels: 5,
+						source: jsGFwk.ResourceManager.sounds.explosion
+					});
 				};
 			},
 			update: function(delta){
