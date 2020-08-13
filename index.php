@@ -42,10 +42,23 @@
 		jsGFwk.include("ResourceManager");
 		jsGFwk.include("Container");
 		jsGFwk.include("Debugger");
-		jsGFwk.Debugger.on = true;
+		jsGFwk.Debugger.on = false;
 		jsGFwk.ResourceManager.addGraphic({name: "main", source: "img/1942.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background2", source: "img/background-2.png"});
+
+		var explosion = {};
+		explosion[jsGFwk.ResourceManager.sounds.format.wav] = {source: "sounds/WAV/P1942_Explosion.wav"};
+		explosion[jsGFwk.ResourceManager.sounds.format.ogg] = {source: "sounds/OGG/P1942_Explosion.ogg"};
+
+		jsGFwk.ResourceManager.addSound({name: "explosion", sources: explosion});
+
+		var shoot = 0;
+
+		shoot[jsGFwk.ResourceManager.sounds.format.wav] = {source:"sounds/WAV/P1942_Shoot1.wav"};
+		shoot[jsGFwk.ResourceManager.sounds.format.ogg] = {source:"sounds/OGG/P1942_Shoot1.ogg"};
+
+		jsGFwk.ResourceManager.addSound({name:"shoot", sources:shoot});
 		
 		jsGFwk.createObject({
 			id: "progressLoader",
