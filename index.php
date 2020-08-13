@@ -11,6 +11,7 @@
 	<script src="Framework/jsGFwkRM.js"></script>
 	<script src="Framework/jsGFwkContainer.js"></script>
 	<script src="Framework/jsGFwkDebugger.js"></script>
+	<script src="scripts/gamecontrol.js"></script>
 	<!--<script src="scripts/framework.js" type="application/javascript"></script>
 	<script src="scripts/keyboard.js" type="application/javascript"></script>
 	<script src="scripts/mouse.js" type="application/javascript"></script> -->
@@ -54,7 +55,10 @@
 					jsGFwk.getGameObjects().progressLoader.destroy();
 					jsGFwk.createObject(backgroundGame);
 					jsGFwk.createObject(airplane);
+					jsGFwk.createObject(gameControl);
+
 					jsGFwk.Container.createContainer('containerBullet',bullet);
+					jsGFwk.Container.createContainer('containerEnemy',enemy);
 				};
 			},
 			update: function(delta){
