@@ -32,23 +32,20 @@ var bullet = {
 	},
 
 	onUpdate: function(delta){
+		var self = this;
 		this.y -= this.speed;
 
 		if(this.y + this.height < 0){
 			this.visible = false;
 		}
 
-		/*for(var i = 0; i < framework.gameObjects.length; i++){
-			if(framework.gameObjects[i].name === 'enemy'){
-				if(this.collision(framework.gameObjects[i])){
-					framework.gameObjects[i].impact();
-					this.visible = true;
-					points += 100;
-					explosionSound.play();
-					break;
-				}
+		jsGFwk.getGameObjects().containerEnemy.eachCloned(function (enemy, event){
+			if(jsGFwk.Collisions.areCollidingBy(enemy, self, jsGFwk.Collisions.collidingModes.RECTANGLE)){
+				enemy.impact();
+				self.destroy();
+				event.cancel = true;
 			}
-		}*/
+		});
 	},
 
 	onDraw: function(contexto){
