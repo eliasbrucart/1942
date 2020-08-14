@@ -12,6 +12,7 @@
 	<script src="Framework/jsGFwkContainer.js"></script>
 	<script src="Framework/jsGFwkDebugger.js"></script>
 	<script src="Framework/jsGFwkJukebox.js"></script>
+	<script src="Framework/jsGFwkFonts.js"></script>
 	<script src="scripts/gamecontrol.js"></script>
 	<!--<script src="scripts/framework.js" type="application/javascript"></script>
 	<script src="scripts/keyboard.js" type="application/javascript"></script>
@@ -21,13 +22,6 @@
 	<script src="scripts/bullet.js" type="application/javascript"></script>
 	<script src="scripts/background.js" type="application/javascript"></script>
 	<script src="scripts/score.js" type="application/javascript"></script>
-
-	<style>
-		@font-face{
-			font-family: 'retroBits';
-			src: url('font/zxBold.ttf');
-		}
-	</style>
 </head>
 <body>
 	<!--Lienzo de dibujo-->
@@ -43,7 +37,9 @@
 		jsGFwk.include("ResourceManager");
 		jsGFwk.include("Container");
 		jsGFwk.include("Debugger");
+		jsGFwk.include("Fonts");
 		jsGFwk.Debugger.on = false;
+		jsGFwk.Fonts.createFont({name: 'retroBits', source:'font/zxBold.ttf'});
 		jsGFwk.ResourceManager.addGraphic({name: "main", source: "img/1942.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background2", source: "img/background-2.png"});
@@ -74,6 +70,7 @@
 					jsGFwk.createObject(backgroundGame);
 					jsGFwk.createObject(airplane);
 					jsGFwk.createObject(gameControl);
+					jsGFwk.createObject(score);
 
 					jsGFwk.Container.createContainer('containerBullet',bullet);
 					jsGFwk.Container.createContainer('containerEnemy',enemy);

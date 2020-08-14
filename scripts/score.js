@@ -1,4 +1,6 @@
 var score = {
+	id: 'score',
+	visible: true,
 	update: function(){
 		if(points > lastPoints){
 			localStorage['points'] = points;

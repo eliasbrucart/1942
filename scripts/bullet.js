@@ -44,6 +44,7 @@ var bullet = {
 				channelExplosion.play();
 				enemy.impact();
 				self.destroy();
+				points += 100;
 				event.cancel = true;
 			}
 		});
