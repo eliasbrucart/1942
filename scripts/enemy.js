@@ -3,7 +3,6 @@ var enemy = {
 	y:1,
 	width: 14,
 	height: 15,
-	name: 'enemy',
 	explosionIndex: 0,
 	explosionAccumulator: 0,
 
@@ -40,7 +39,7 @@ var enemy = {
 		contexto.drawImage(jsGFwk.ResourceManager.graphics.main.image, 163 + (this.explosionIndex * 16), 79, 16, 15, this.x, this.y, 16, 15);
 	},
 
-	updateNormal: function(){
+	updateNormal: function(delta){
 		this.y += 2;
 
 		if(this.y > 480){
@@ -54,9 +53,9 @@ var enemy = {
 		contexto.drawImage(jsGFwk.ResourceManager.graphics.main.image, 5, 200, 14, 15, this.x, this.y, 14, 15);
 	},
 
-	onUpdate: function(){
+	update: function(){
 	},
 
-	onDraw: function(contexto){
+	draw: function(contexto){
 	}
 };

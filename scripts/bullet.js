@@ -3,8 +3,6 @@ var bullet = {
 	y: 0,
 	width: 17,
 	height: 12,
-	name: 'bullet',
-	visible: false,
 	speed: 2,
 
 	onInit: function(parameters){

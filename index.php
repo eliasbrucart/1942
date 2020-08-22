@@ -6,12 +6,14 @@
 
 	<script src="Framework/jsGFwk.js"></script>
 	<script src="Framework/jsGFwk2dFastAnimation.js"></script>
+	<script src="Framework/jsGFwkBasicAnimation.js"></script>
 	<script src="Framework/jsGFwkCollisions.js"></script>
 	<script src="Framework/jsGFwkIO.js"></script>
 	<script src="Framework/jsGFwkRM.js"></script>
 	<script src="Framework/jsGFwkContainer.js"></script>
 	<script src="Framework/jsGFwkDebugger.js"></script>
 	<script src="Framework/jsGFwkJukebox.js"></script>
+	<script src="Framework/jsGFwkTimers.js"></script>
 	<script src="Framework/jsGFwkFonts.js"></script>
 	<script src="Framework/jsGFwkScenes.js"></script>
 	<script src="scripts/gamecontrol.js"></script>
@@ -23,6 +25,7 @@
 	<script src="scripts/bullet.js" type="application/javascript"></script>
 	<script src="scripts/background.js" type="application/javascript"></script>
 	<script src="scripts/score.js" type="application/javascript"></script>
+	<script src="scripts/hud.js" type="application/javascript"></script>
 </head>
 <body>
 	<!--Lienzo de dibujo-->
@@ -37,10 +40,10 @@
 		jsGFwk.include("Collisions");
 		jsGFwk.include("ResourceManager");
 		jsGFwk.include("Container");
-		jsGFwk.include("Debugger");
+		//jsGFwk.include("Debugger");
 		jsGFwk.include("Fonts");
 		jsGFwk.include("Scenes");
-		jsGFwk.Debugger.on = false;
+		//jsGFwk.Debugger.on = false;
 		jsGFwk.Fonts.createFont({name: 'retroBits', source:'font/zxBold.ttf'});
 		jsGFwk.ResourceManager.addGraphic({name: "main", source: "img/1942.png"});
 		jsGFwk.ResourceManager.addGraphic({name: "background1", source: "img/background.png"});
@@ -62,7 +65,7 @@
 		shoot[jsGFwk.ResourceManager.sounds.format.ogg] = {source:"sounds/OGG/P1942_Shoot1.ogg"};
 
 		jsGFwk.ResourceManager.addSound({name:"shootSounds", sources:shoot});
-		
+
 		jsGFwk.createObject({
 			id: "progressLoader",
 			visible: true,
@@ -73,14 +76,6 @@
 					jsGFwk.createObject(airplane);
 					jsGFwk.createObject(gameControl);
 					jsGFwk.createObject(score);
-
-					var containerBullet = jsGFwk.Container.createContainer('containerBullet',bullet,true);
-					var containerEnemy = jsGFwk.Container.createContainer('containerEnemy',enemy,true);
-
-					jsGFwk.Scenes.create({name:"menu", gameObjects:[hud]});
-					jsGFwk.Scenes.create({name:"game", gameObjects:[backgroundGame, airplane, gamecontrol, score, containerBullet, containerEnemy]});
-
-					jsGFwk.Scenes.scenes.menu.enable();
 
 					channelShoot = new jsGFwk.Jukebox({
 						volume: 0.5,
@@ -93,6 +88,11 @@
 						channels: 5,
 						source: jsGFwk.ResourceManager.sounds.explosion
 					});
+					var containerBullets = jsGFwk.Container.createContainer("containerBullet",bullet,true);
+					var containerEnemies = jsGFwk.Container.createContainer("containerEnemy",enemy,true);
+					jsGFwk.Scenes.create({name:"menu", gameObjects: [hud] });
+					jsGFwk.Scenes.create({name:"game", gameObjects: [backgroundGame, airplane, gameControl, score, containerBullets, containerEnemies] });
+					jsGFwk.Scenes.scenes.menu.enable();
 				};
 			},
 			update: function(delta){
@@ -103,16 +103,19 @@
 				context.font = "30pt verdana";
 				context.fillText(jsGFwk.ResourceManager._totalLoadedResources + '/' + jsGFwk.ResourceManager._totalResources, 250, 220);
 			}
+			
 		});
+
+		var points = 0;
 
 		jsGFwk.start();
 
-		var spriteSheet = new Image(),
+		/*var spriteSheet = new Image(),
 			background = new Image(),
 			background2 = new Image(),
 			points = 0,
 			shootSound = new Audio(),
-			explosionSound = new Audio();
+			explosionSound = new Audio();*/
 
 			var lastPoints = localStorage['points'] ? parseFloat(localStorage['points']) : 0;
 
@@ -140,7 +143,7 @@
 			mouse.init();
 			keyboard.init();
 		};*/
-		spriteSheet.src = 'img/1942.png';
+		/*spriteSheet.src = 'img/1942.png';
 		background.src = 'img/background.png';
 		background2.src = 'img/background-2.png';
 
@@ -153,6 +156,6 @@
 		} else if('audio/mpeg;'){
 			shootSound.src = 'sounds/MP3/P1942_Shoot1.mp3';
 			explosionSound.src = 'sounds/MP3/P1942_Explosion.mp3';
-		}
+		}*/
 	</script>
 </html>

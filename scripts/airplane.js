@@ -1,6 +1,6 @@
 var airplane = {
 	id: 'airplane',
-	visible: 'true',
+	visible: true,
 	positions: [{x:38, y:6, width:24, height:16},
 					{x:101, y:6, width:24, height:16},
 					{x:166, y:6, width:24, height:16}],
@@ -23,6 +23,14 @@ var airplane = {
 		var self = this;
 		this.museId = jsGFwk.IO.mouse.registerClick(function(coord){
 			self.mouseCoords = coord;
+		});
+
+		this.shootTimer = new jsGFwk.Timer({
+			action: function(){
+				jsGFwk.getGameObjects().containerBullets.cloneObject({x: this.x + 3, y: this.y - 10});
+				channelShoot.play();
+			},
+			tickTime: 0.1
 		});
 	},
 
@@ -68,8 +76,8 @@ var airplane = {
 		if(this.accumulatedShotTime > 0.5){
 			this.accumulatedShotTime = 0;
 
-			jsGFwk.getGameObjects().containerBullet.cloneObject({x: this.x + 3, y: this.y - 10});
-			//jsGFwk.ResourceManager.sounds.shootSounds.audio.play();
+			jsGFwk.getGameObjects().containerBullets.cloneObject({x: this.x + 3, y: this.y - 10});
+			//jsGFwk.getGameObjects().containerBullet.cloneObject({x: this.x + 3, y: this.y - 10});
 			channelShoot.play();
 		}
 	},
@@ -77,10 +85,11 @@ var airplane = {
 	update: function(delta){
 		this.accumulatedTime += delta;
 		this.accumulatedShotTime += delta;
-		this.shoot();
+		//this.shoot();
 		//this.updateWithMouse();
 		this.x += (this.mouseCoords.x - this.x) / this.speedMove;
 		this.y += (this.mouseCoords.y - this.y) / this.speedMove;
+		this.shootTimer.tick(delta);
 		this.actualImage = this.positions[this.animationIndex];
 	},
 
