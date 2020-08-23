@@ -5,6 +5,12 @@
 	<title>1942 Phaser</title>
 	<script src="phaser/phaser.min.js" type="application/javascript"></script>
 	<script src="scripts/boot.js" type="application/javascript"></script>
+	<style>
+		@font-face {
+			font-family:'retroBits';
+			src: url(font/zxBold.ttf);
+		}
+	</style>
 </head>
 <body>
 	<script type="application/javascript">
