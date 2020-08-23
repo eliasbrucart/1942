@@ -5,6 +5,7 @@
 	<title>1942 Phaser</title>
 	<script src="phaser/phaser.min.js" type="application/javascript"></script>
 	<script src="scripts/boot.js" type="application/javascript"></script>
+	<script src="scripts/hud.js" type="application/javascript"></script>
 	<style>
 		@font-face {
 			font-family:'retroBits';
@@ -20,6 +21,7 @@
 			game = new Phaser.Game(640, 480, Phaser.AUTO, '');
 
 			game.state.add('boot', boot);
+			game.state.add('hud', hud);
 
 			game.state.start('boot');
 		};

@@ -16,7 +16,7 @@ var boot = {
 		game.physics.startSystem(Phaser.Physics.ARCADE);
 	},
 	create: function create() {
-
+		game.state.start('hud');
 	},
 	update: function update() {
 		game.stage.backgroundColor = 'black';
