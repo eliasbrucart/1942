@@ -14,6 +14,10 @@ var hud = {
 	},
 
 	update: function update(){
+		this.background.y += this.backgroundSpeed;
+		this.background.y = this.backgroundSpeed.y % 800;
 
+		this.background2.y += this.background2Speed;
+		this.background2.y = this.background2Speed.y % 800;
 	}
 };
